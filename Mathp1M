@@ -1,0 +1,33 @@
+
+Problem Statement :
+https://www.desiqna.in/17022/dbs-oa-sde1-intern-ctc-35-l-set-01-2024
+
+************************************* O(n^3) *************************************
+for(int i=0;i<cnt1;i++)
+{
+	for(int j=0;j<cnt2;j++)
+	{
+		for(int k=0;k<cnt3;k++)
+		{
+			int T=2*i+3*j+4*k;
+			if(T==S)
+			{
+				cost=i*cost1+j*cost2+k*cost3;
+				ans=min(ans,cost);
+			}
+		}
+	}
+}
+************************************* O(n^2) *************************************
+for(int i=0;i<cnt1;i++)
+{
+	for(int j=0;j<cnt2;j++)
+	{
+		k=(S-(2*i+3*j))/5;
+			if(k>=0 && k<cnt3)
+			{
+				cost=i*cost1+j*cost2+k*cost3;
+				ans=min(ans,cost);
+			}
+	}
+}

@@ -1,0 +1,44 @@
+
+
+Problem Statement :
+https://www.desiqna.in/17118/google-oa-sde-role-2024
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int flag=1;
+    for(int j=0;j<=20;j++)
+    {
+        if(flag==0) { cout<<"IMPOSSIBLE"<<" "; return 0;}
+        int count0=0,count1=0;
+        for(int i=0;i<n;i++)
+        {
+            if(((arr[i]>>j) & 1) == 1)
+            {
+                count1++;
+            }
+            else if(((arr[i]>>j) & 1) == 0)
+            {
+                count0++;
+            }
+        }
+        if(count0%2==0 || count1%2==0)
+        {
+            flag=1;
+        }
+        else 
+        {
+            flag=0;
+        }
+    }
+    cout<<"YES POSSIBLE"<<" ";
+    return 0;
+}
